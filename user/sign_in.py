@@ -63,7 +63,7 @@ class UserBehavior(TaskSet):
 class WebsiteUser(HttpUser):
     tasks = [UserBehavior]
     # 사용자 대기시간 정의
-    wait_time = constant(999999)
+    wait_time = constant(1)
 
 """
 - 1차 테스트
@@ -71,4 +71,6 @@ class WebsiteUser(HttpUser):
 """
 """
 - 2차 테스트
+로커스트 테스트 로직을 잘못 이해하고 있었음
+쿠키 파싱 등의 서버 로직이 돌아가지 않는 문제가 발생하지는 않음
 """
