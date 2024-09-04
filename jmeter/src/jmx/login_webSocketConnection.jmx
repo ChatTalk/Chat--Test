@@ -20,7 +20,7 @@
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 데이터 셋 설정(로그인)">
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 데이터 셋 설정(로그인)" enabled="true">
           <stringProp name="filename">/Users/kimdongjun/Desktop/chat/chat-test/jmeter/src/csv/users.csv</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
           <stringProp name="variableNames">email,password</stringProp>
@@ -32,7 +32,7 @@
           <stringProp name="shareMode">shareMode.all</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="계수기">
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="계수기" enabled="true">
           <stringProp name="CounterConfig.start">1</stringProp>
           <stringProp name="CounterConfig.end">998</stringProp>
           <stringProp name="CounterConfig.incr">1</stringProp>
@@ -41,7 +41,7 @@
           <boolProp name="CounterConfig.per_user">false</boolProp>
         </CounterConfig>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="로그인">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="로그인" enabled="true">
           <stringProp name="HTTPSampler.domain">localhost</stringProp>
           <stringProp name="HTTPSampler.port">8080</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -65,7 +65,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="토큰 정규표현식 추출기">
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="토큰 정규표현식 추출기" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">true</stringProp>
             <stringProp name="RegexExtractor.refname">token</stringProp>
             <stringProp name="RegexExtractor.regex">Set-Cookie: Authorization=Bearer%20(.+?);</stringProp>
@@ -75,7 +75,7 @@
             <stringProp name="RegexExtractor.match_number">0</stringProp>
           </RegexExtractor>
           <hashTree/>
-          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 사후처리기(쿠키의 토큰 전역변수 처리)">
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 사후처리기(쿠키의 토큰 전역변수 처리)" enabled="true">
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
@@ -122,7 +122,7 @@ log.info(&quot;토큰 정보 = {}&quot;, props.get(&quot;token&quot;))</stringPr
           <stringProp name="port">8080</stringProp>
           <stringProp name="path">/stomp/chat/${counter}/${__RandomString(8,abcdefghijklmnopqrstuvwxyz,sessionld)}/websocket</stringProp>
           <stringProp name="connectTimeout">20000</stringProp>
-          <stringProp name="readTimeout">6000</stringProp>
+          <stringProp name="readTimeout">10000</stringProp>
         </eu.luminis.jmeter.wssampler.OpenWebSocketSampler>
         <hashTree>
           <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP 쿠키 관리자(웹소켓 업그레이드용)">
@@ -141,7 +141,7 @@ log.info(&quot;토큰 정보 = {}&quot;, props.get(&quot;token&quot;))</stringPr
             <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
           </CookieManager>
           <hashTree/>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP 헤더 관리자(웹소켓)">
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP 헤더 관리자(웹소켓) -&gt; 얜 왠지 구독(혹은 송수신(할 때 써야할 것 같은데..?" enabled="false">
             <collectionProp name="HeaderManager.headers">
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Authorization</stringProp>
